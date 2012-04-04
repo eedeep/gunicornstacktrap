@@ -12,7 +12,7 @@ with a timestamp and the process ID of the thread. Hopefully one of these files 
 
 Finally you can put this in crontab to get email alerts when something new gets written to the dump-stack-traces.log:
 
-*/1 * * * *     perl /home/cotton-admin/gunicorn_stackdumps/tail_n_mail  --mailcom=/usr/sbin/sendmail /home/cotton-admin/gunicorn_stackdumps/stackmon_mail.config.cfg
+*/1 * * * *     perl /home/eedeep/gunicorn_stackdumps/tail_n_mail  --mailcom=/usr/sbin/sendmail /home/eedeep/gunicorn_stackdumps/stackmon_mail.config.cfg
 
 Which will email you when anything new gets written to dump-stack-traces.log, so you know when to go check your traps to see if you snared anything tasty.
 That script comes from here: http://bucardo.org/wiki/Tail_n_mail#Basic_Usage and requires you do:

@@ -9,7 +9,7 @@ daemon = True
 #daemon = False
 debug = False
 pidfile = "gunicorn.pid"
-LOGFILE = logfile = "/var/www/sites/cottonon-staging/gunicorn.log"
+LOGFILE = logfile = "/var/www/sites/mysite/gunicorn.log"
 workers = (os.sysconf("SC_NPROCESSORS_ONLN") * 4) + 1
 loglevel = "debug"
 timeout = 120
@@ -23,7 +23,7 @@ import atexit
 import Queue
 import traceback 
 
-FILE = '/home/cotton-admin/gunicorn_stackdumps/dump-stack-traces.txt'
+FILE = '/home/eedeep/gunicorn_stackdumps/dump-stack-traces.txt'
 
 _interval = 1.0
 
@@ -42,7 +42,7 @@ def _stacktraces():
             if line: 
                 code.append("  %s" % (line.strip())) 
 
-        filename = '/home/cotton-admin/gunicorn_stackdumps/%s_pid%s.txt' % (time.strftime('%Y_%m_%d_%H_%M_%S'), os.getpid())
+        filename = '/home/eedeep/gunicorn_stackdumps/%s_pid%s.txt' % (time.strftime('%Y_%m_%d_%H_%M_%S'), os.getpid())
         f = open(filename, 'a')
         for line in code:
             print >> sys.stderr, line
